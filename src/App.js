@@ -5,9 +5,15 @@ import List from "./pages/list";
 import Error from "./pages/error";
 import { useSelector } from "react-redux";
 import "./assets/scss/app.scss";
+import Loading from "./components/loading/loading.js";
 
 function App() {
   const { user } = useSelector((state) => state.user);
+  const { loading } = useSelector((state) => state.loading);
+
+  React.useEffect(() => {
+    console.log("loading: ", loading);
+  }, [loading]);
 
   return (
     <div className="content-wrapper">
@@ -25,6 +31,7 @@ function App() {
             <Redirect to="/error" />
           </Switch>
         )}
+        <Loading visible={loading} />
       </BrowserRouter>
     </div>
   );

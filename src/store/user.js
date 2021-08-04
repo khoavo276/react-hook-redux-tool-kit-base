@@ -9,7 +9,7 @@ const initialUser = localStorage.getItem("user")
 const slice = createSlice({
   name: "user",
   initialState: {
-    user: initialUser
+    user: initialUser,
   },
   reducers: {
     loginSuccess: (state, action) => {
@@ -20,8 +20,8 @@ const slice = createSlice({
     logoutSuccess: (state) => {
       state.user = null;
       localStorage.removeItem("user");
-    }
-  }
+    },
+  },
 });
 
 export default slice.reducer;

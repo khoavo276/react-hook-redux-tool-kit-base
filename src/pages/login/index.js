@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Field, Form, Formik } from "formik";
 import { login } from "../../store/user";
+// import { show } from "../../store/loading";
 import "./style.scss";
 
 const Login = () => {
@@ -13,6 +14,7 @@ const Login = () => {
         initialValues={{ username: "", password: "" }}
         onSubmit={(values) => {
           dispatch(login(values));
+          // dispatch(show());
         }}
       >
         {({ isSubmitting }) => (
