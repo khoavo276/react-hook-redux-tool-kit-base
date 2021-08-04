@@ -11,10 +11,6 @@ function App() {
   const { user } = useSelector((state) => state.user);
   const { loading } = useSelector((state) => state.loading);
 
-  React.useEffect(() => {
-    console.log("loading: ", loading);
-  }, [loading]);
-
   return (
     <div className="content-wrapper">
       <BrowserRouter>
