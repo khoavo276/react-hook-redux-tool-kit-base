@@ -4,6 +4,7 @@ import Login from "./pages/login";
 import List from "./pages/list";
 import Error from "./pages/error";
 import { useSelector } from "react-redux";
+import "./assets/scss/app.scss";
 
 function App() {
   const { user } = useSelector((state) => state.user);
