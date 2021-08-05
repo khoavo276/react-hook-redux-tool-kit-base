@@ -1,45 +1,45 @@
-html {
-  font-size: 62.5%;
-}
+// html {
+//   font-size: 62.5%;
+// }
 
-body {
-  position: relative;
-  width: 100%;
-  color: $color_primary;
-  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
-  font-size: 1.4rem;
-  line-height: 1.5;
-  word-break: break-all;
-}
+// body {
+//   position: relative;
+//   width: 100%;
+//   color: $color_primary;
+//   font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+//   font-size: 1.4rem;
+//   line-height: 1.5;
+//   word-break: break-all;
+// }
 
-a {
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-  color: $color_black;
-  text-decoration: none;
+// a {
+//   transition: all 0.2s ease-in-out;
+//   opacity: 1;
+//   color: $color_black;
+//   text-decoration: none;
 
-  &:hover {
-    opacity: 0.8;
-  }
-}
+//   &:hover {
+//     opacity: 0.8;
+//   }
+// }
 
-.addtoany_content {
-  text-align: center;
+// .addtoany_content {
+//   text-align: center;
 
-  .addtoany_list a {
-    margin: 0 14px;
+//   .addtoany_list a {
+//     margin: 0 14px;
 
-    @include mq_down(sp) {
-      margin: 0 setvw(14px);
-      padding: 0;
-    }
+//     @include mq_down(sp) {
+//       margin: 0 setvw(14px);
+//       padding: 0;
+//     }
 
-    img {
-      height: 50px;
+//     img {
+//       height: 50px;
 
-      @include mq_down(sp) {
-        height: setvw(50px);
-      }
-    }
-  }
-}
+//       @include mq_down(sp) {
+//         height: setvw(50px);
+//       }
+//     }
+//   }
+// }

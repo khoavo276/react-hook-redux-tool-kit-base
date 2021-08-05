@@ -1,11 +1,13 @@
 import React from "react";
 import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
-import Login from "./pages/login";
+import Login from "./pages/User/Login/Login.js";
 import List from "./pages/list";
-import Error from "./pages/error";
+import Error from "./pages/Error/Error.js";
 import { useSelector } from "react-redux";
-import "./assets/scss/app.scss";
 import Loading from "./components/loading/loading.js";
+import Home from "./pages/Home/Home";
+import SignUp from "./pages/User/SignUp/SignUp.js";
+import "./assets/scss/app.scss";
 
 function App() {
   const { user } = useSelector((state) => state.user);
@@ -17,13 +19,17 @@ function App() {
         {!user ? (
           <Switch>
             <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={SignUp} />
             <Redirect to="/login" />
+            <Route exact path="/" component={Home} />
           </Switch>
         ) : (
           <Switch>
             <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={SignUp} />
             <Route path="/list" component={List} />
             <Route path="/error" component={Error} />
+            <Route exact path="/" component={Home} />
             <Redirect to="/error" />
           </Switch>
         )}

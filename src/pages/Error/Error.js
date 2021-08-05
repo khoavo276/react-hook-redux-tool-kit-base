@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.scss";
+import "./Error.scss";
 
 const Error = () => {
   return (
@@ -14,7 +14,7 @@ const Error = () => {
           The page you are looking for might have been removed had its name
           changed or is temporarily unavailable.
         </p>
-        <a href="#">home page</a>
+        <a href="/">home page</a>
       </div>
     </div>
   );
