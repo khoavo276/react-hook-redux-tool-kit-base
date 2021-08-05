@@ -1,7 +1,17 @@
 import React from "react";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { logout } from "../../store/user";
+import { useDispatch } from "react-redux";
 
 const Navigation = () => {
+  const { user } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  const onLogOut = () => {
+    dispatch(logout());
+  };
+
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
@@ -26,10 +36,22 @@ const Navigation = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            <Nav>
-              <Nav.Link href="/login">Login</Nav.Link>
-              <Nav.Link href="/signup">SignUp</Nav.Link>
-            </Nav>
+            {!user ? (
+              <Nav>
+                <Nav.Link href="/login">Login</Nav.Link>
+                <Nav.Link href="/signup">SignUp</Nav.Link>
+              </Nav>
+            ) : (
+              <Nav>
+                <NavDropdown
+                  title={`welcome, ${user.username}`}
+                  id="collasible-nav-dropdown"
+                >
+                  <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+                  <NavDropdown.Item onClick={onLogOut}>LogOut</NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+            )}
           </Navbar.Collapse>
         </Container>
       </Navbar>

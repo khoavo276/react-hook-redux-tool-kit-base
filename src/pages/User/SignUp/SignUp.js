@@ -1,10 +1,22 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import * as Yup from "yup";
+import { Formik, Form } from "formik";
+import { TextField } from "../../../components/TextField.js";
 import "./SignUp.scss";
 
 const SignUp = () => {
   let history = useHistory();
+
+  const validate = Yup.object({
+    user: Yup.string()
+      .max(15, "Must be 15 characters or less")
+      .required("Required"),
+    email: Yup.string().email("Email is invalid").required("Email is required"),
+    password: Yup.string()
+      .min(6, "Password must be at least 6 charaters")
+      .required("Password is required"),
+  });
 
   return (
     <div className="wrapper-signup">
@@ -18,44 +30,31 @@ const SignUp = () => {
             />
           </div>
 
-          <form>
-            <input
-              type="text"
-              id="login"
-              className="fadeIn first"
-              name="login"
-              placeholder="UserName"
-            />
-            <input
-              type="password"
-              id="password"
-              className="fadeIn second"
-              name="login"
-              placeholder="Password"
-            />
-
-            <input
-              type="text"
-              id="fullname"
-              className="fadeIn third"
-              name="fullname"
-              placeholder="FullName"
-            />
-
-            <input
-              type="text"
-              id="email"
-              className="fadeIn fourth"
-              name="email"
-              placeholder="Email"
-            />
-
-            <div className="d-grid gap-2 px-5 my-4 fadeIn">
-              <Button variant="primary" size="md">
-                SignUp
-              </Button>
-            </div>
-          </form>
+          <Formik
+            initialValues={{
+              email: "",
+              user: "",
+              password: "",
+            }}
+            validationSchema={validate}
+            onSubmit={(values) => {
+              console.log(values);
+            }}
+          >
+            {(formik) => (
+              <div>
+                <h1 className="my-4 font-weight-bold .display-4">SignUp</h1>
+                <Form className="mx-4">
+                  <TextField label="Email" name="email" type="email" />
+                  <TextField label="User" name="user" type="text" />
+                  <TextField label="Password" name="password" type="password" />
+                  <button className="btn btn-primary btn-md my-3" type="submit">
+                    Sign Up
+                  </button>
+                </Form>
+              </div>
+            )}
+          </Formik>
 
           <div id="formFooter">
             <a

@@ -1,5 +1,5 @@
 import React from "react";
-import Navigation from "../../components/Navigation/Navigation";
+import Header from "../../components/Header/Header";
 import { Row, Col, Card, Button } from "react-bootstrap";
 import placeHodel from "../../assets/images/item-holder.svg";
 import "./Home.scss";
@@ -8,7 +8,7 @@ import Footer from "../../components/Footer/Footer";
 const Home = () => {
   return (
     <>
-      <Navigation />
+      <Header />
       <div className="home-body">
         <div className="container pt-4">
           <Row xs={1} md={3} xl={4} className="g-4">

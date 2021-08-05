@@ -4,7 +4,7 @@ import Login from "./pages/User/Login/Login.js";
 import List from "./pages/list";
 import Error from "./pages/Error/Error.js";
 import { useSelector } from "react-redux";
-import Loading from "./components/loading/loading.js";
+import Loading from "./components/Loading/Loading";
 import Home from "./pages/Home/Home";
 import SignUp from "./pages/User/SignUp/SignUp.js";
 import "./assets/scss/app.scss";

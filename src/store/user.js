@@ -15,11 +15,12 @@ const slice = createSlice({
     loginSuccess: (state, action) => {
       state.user = action.payload;
       localStorage.setItem("user", JSON.stringify(action.payload));
-      window.location.href = "list";
+      window.location.href = "/";
     },
     logoutSuccess: (state) => {
       state.user = null;
       localStorage.removeItem("user");
+      window.location.href = "/";
     },
   },
 });
@@ -30,16 +31,16 @@ export default slice.reducer;
 
 const { loginSuccess, logoutSuccess } = slice.actions;
 
-export const login =
-  ({ username }) =>
-  async (dispatch) => {
-    try {
-      // await api.post('/api/auth/login/', { username, password })
-      dispatch(loginSuccess({ username }));
-    } catch (e) {
-      return console.error(e.message);
-    }
-  };
+export const login = (values) => async (dispatch) => {
+  try {
+    // await api.post('/api/auth/login/', { username, password })
+    dispatch(
+      loginSuccess({ username: values?.user, password: values?.password })
+    );
+  } catch (e) {
+    return console.error(e.message);
+  }
+};
 
 export const logout = () => async (dispatch) => {
   try {
