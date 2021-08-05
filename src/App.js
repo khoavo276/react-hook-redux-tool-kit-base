@@ -16,7 +16,7 @@ function App() {
       <BrowserRouter>
         {!user ? (
           <Switch>
-            <Route path="/login" component={Login} />
+            <Route exact path="/login" component={Login} />
             <Redirect to="/login" />
           </Switch>
         ) : (

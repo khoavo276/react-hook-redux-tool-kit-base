@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./style.scss";
-import api from "../../api";
+import api from "../../api/api.js";
 
 const List = () => {
   const [list, setList] = useState([]);
 
   const getData = async () => {
     try {
-      const response = await await api.get("users");
+      const response = await await api.get(`/users`);
       if (response) {
-        setList(response?.data);
+        setList(response);
         console.log("list: ", list);
         console.log("response: ", response);
       }
