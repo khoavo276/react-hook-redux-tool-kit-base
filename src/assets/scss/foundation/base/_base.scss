@@ -2,15 +2,16 @@
 //   font-size: 62.5%;
 // }
 
-// body {
-//   position: relative;
-//   width: 100%;
-//   color: $color_primary;
-//   font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
-//   font-size: 1.4rem;
-//   line-height: 1.5;
-//   word-break: break-all;
-// }
+body {
+  position: relative;
+  width: 100%;
+  color: $color_primary;
+  font-size: $global-font-size;
+  line-height: 1.875; // 30px
+  // font-family: $font-family-base;
+  -webkit-text-size-adjust: 100%;
+  letter-spacing: 0.1em;
+}
 
 a {
   transition: all 0.2s ease-in-out;
