@@ -18,18 +18,18 @@ function App() {
       <BrowserRouter>
         {!user ? (
           <Switch>
+            <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={SignUp} />
             <Redirect to="/login" />
-            <Route exact path="/" component={Home} />
           </Switch>
         ) : (
           <Switch>
+            <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={SignUp} />
             <Route path="/list" component={List} />
             <Route path="/error" component={Error} />
-            <Route exact path="/" component={Home} />
             <Redirect to="/error" />
           </Switch>
         )}

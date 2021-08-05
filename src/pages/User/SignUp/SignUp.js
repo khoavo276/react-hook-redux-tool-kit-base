@@ -1,12 +1,16 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import "./SignUp.scss";
 
 const SignUp = () => {
+  let history = useHistory();
+
   return (
     <div className="wrapper-signup">
       <div className="wrapper fadeInDown">
         <div id="formContent">
-          <div className="fadeIn first mb-4">
+          <div className="fadeIn mb-4">
             <img
               src="https://smartdev.com/wp-content/uploads/2020/06/SmartDev-Offshore-Software-Outsourcing.svg"
               id="icon"
@@ -17,34 +21,49 @@ const SignUp = () => {
           <form>
             <input
               type="text"
-              id="fullname"
-              className="fadeIn second"
-              name="fullnam"
-              placeholder="FullName"
-            />
-            <input
-              type="text"
               id="login"
-              className="fadeIn second"
+              className="fadeIn first"
               name="login"
               placeholder="UserName"
             />
             <input
               type="password"
               id="password"
-              className="fadeIn third"
+              className="fadeIn second"
               name="login"
               placeholder="Password"
             />
+
             <input
-              type="submit"
-              className="fadeIn fourth mt-4"
-              value="SignUp"
+              type="text"
+              id="fullname"
+              className="fadeIn third"
+              name="fullname"
+              placeholder="FullName"
             />
+
+            <input
+              type="text"
+              id="email"
+              className="fadeIn fourth"
+              name="email"
+              placeholder="Email"
+            />
+
+            <div className="d-grid gap-2 px-5 my-4 fadeIn">
+              <Button variant="primary" size="md">
+                SignUp
+              </Button>
+            </div>
           </form>
 
           <div id="formFooter">
-            <a className="underlineHover" href="/">
+            <a
+              className="underlineHover"
+              onClick={() => {
+                history.push("/");
+              }}
+            >
               Go to the Site
             </a>
           </div>

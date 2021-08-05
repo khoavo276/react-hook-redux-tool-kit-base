@@ -3,15 +3,16 @@ import Navigation from "../../components/Navigation/Navigation";
 import { Row, Col, Card, Button } from "react-bootstrap";
 import placeHodel from "../../assets/images/item-holder.svg";
 import "./Home.scss";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   return (
     <>
       <Navigation />
       <div className="home-body">
-        <div className="container pt-5">
+        <div className="container pt-4">
           <Row xs={1} md={3} xl={4} className="g-4">
-            {Array.from({ length: 18 }).map((_, idx) => (
+            {Array.from({ length: 16 }).map((_, idx) => (
               <Col key={idx}>
                 <Card>
                   <Card.Img variant="top" src={placeHodel} />
@@ -30,6 +31,7 @@ const Home = () => {
           </Row>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
