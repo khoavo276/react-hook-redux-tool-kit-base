@@ -1,5 +1,6 @@
 import axios from "axios";
 import queryString from "query-string";
+import { getToken } from "../utils/Common";
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
@@ -11,10 +12,9 @@ const api = axios.create({
 
 api.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      config.headers["Authorization"] = `Token ${token}`;
-    }
+    // if (getToken()) {
+    //   config.headers["Authorization"] = `Token ${getToken()}`;
+    // }
     return config;
   },
   (error) => Promise.reject(error)

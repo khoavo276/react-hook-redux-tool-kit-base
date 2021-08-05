@@ -40,7 +40,7 @@ export const login = (values) => async (dispatch) => {
     let user = {
       username: values?.user,
     };
-    let token = "fake token";
+    let token = "faketoken";
 
     dispatch(loginSuccess({ user: user, token: token }));
   } catch (e) {

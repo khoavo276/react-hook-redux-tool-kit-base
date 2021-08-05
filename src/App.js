@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
 import Login from "./pages/User/Login/Login.js";
-import List from "./pages/list";
+import ListUser from "./pages/ListUser/ListUser.js";
 import Error from "./pages/Error/Error.js";
 import { useSelector } from "react-redux";
 import Loading from "./components/Loading/Loading";
@@ -15,7 +15,6 @@ import api from "./api/api.js";
 
 function App() {
   const { user } = useSelector((state) => state.user);
-  const { loading } = useSelector((state) => state.loading);
   const [authLoading, setAuthLoading] = useState(true);
 
   const getUserMe = async () => {
@@ -25,7 +24,10 @@ function App() {
       // }
       let fakeResponse = { result: true };
       if (fakeResponse.result) {
-        setUserLocal(getToken, user);
+        setUserLocal(getToken(), user);
+        setAuthLoading(false);
+      } else {
+        removeUserLocal();
         setAuthLoading(false);
       }
     } catch (e) {
@@ -40,6 +42,8 @@ function App() {
       return;
     }
 
+    console.log("check auth");
+
     getUserMe();
   }, []);
 
@@ -51,15 +55,13 @@ function App() {
     <div className="content-wrapper">
       <BrowserRouter>
         <Switch>
-          <PrivateRoute path="/list" component={List} />
+          <PrivateRoute path="/list" component={ListUser} />
           <Route exact path="/" component={Home} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/login" component={Login} />
+          <PublicRoute exact path="/signup" component={SignUp} />
+          <PublicRoute exact path="/login" component={Login} />
           <Route path="/error" component={Error} />
           <Redirect to="/error" />
         </Switch>
-
-        <Loading visible={loading} />
       </BrowserRouter>
     </div>
   );
