@@ -30,6 +30,7 @@ api.interceptors.response.use(
   },
   (error) => {
     // Handle errors
+    return false;
     throw error;
   }
 );

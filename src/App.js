@@ -12,6 +12,7 @@ import PublicRoute from "./utils/PublicRoute";
 import "./assets/scss/app.scss";
 import { getToken, removeUserLocal, setUserLocal } from "./utils/Common";
 import api from "./api/api.js";
+import Toast from "./components/Toast";
 
 function App() {
   const { user } = useSelector((state) => state.user);
@@ -56,11 +57,12 @@ function App() {
           <PrivateRoute path="/list" component={ListUser} />
           <Route exact path="/" component={Home} />
           <PublicRoute exact path="/signup" component={SignUp} />
-          <PublicRoute exact path="/login" component={Login} />
+          <Route exact path="/login" component={Login} />
           <Route path="/error" component={Error} />
           <Redirect to="/error" />
         </Switch>
       </BrowserRouter>
+      <Toast />
     </div>
   );
 }

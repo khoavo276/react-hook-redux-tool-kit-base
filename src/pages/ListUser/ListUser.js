@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import api from "../../api/api.js";
 import DefaultLayout from "../../layout/DefaultLayout/DefaultLayout";
+import Loading from "../../components/Loading/Loading";
 import "./ListUser.scss";
 
 const ListUser = () => {
   const [list, setList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getData = async () => {
     try {
@@ -12,8 +14,10 @@ const ListUser = () => {
       if (response) {
         setList(response);
       }
+      setLoading(false);
     } catch (e) {
       console.log(e);
+      setLoading(false);
     }
   };
 
@@ -33,6 +37,7 @@ const ListUser = () => {
               </div>
             ))}
         </div>
+        <Loading visible={loading} />
       </DefaultLayout>
     </>
   );

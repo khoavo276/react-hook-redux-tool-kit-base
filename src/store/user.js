@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { setUserLocal, removeUserLocal } from "../utils/Common";
+import { pushToast } from "../components/Toast";
 // Slice
 
 const initialUser = localStorage.getItem("user")
@@ -22,7 +23,6 @@ const slice = createSlice({
       state.user = null;
       // localStorage.removeItem("user");
       removeUserLocal();
-      window.location.href = "/";
     },
   },
 });
@@ -35,7 +35,7 @@ const { loginSuccess, logoutSuccess } = slice.actions;
 
 export const login = (values) => async (dispatch) => {
   try {
-    // await api.post('/api/auth/login/', { username, password })
+    // await api.post("/api/auth/login/", { username, password });
 
     let user = {
       username: values?.user,
@@ -44,6 +44,7 @@ export const login = (values) => async (dispatch) => {
 
     dispatch(loginSuccess({ user: user, token: token }));
   } catch (e) {
+    pushToast("error", e?.message);
     return console.error(e.message);
   }
 };
