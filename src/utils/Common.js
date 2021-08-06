@@ -21,3 +21,13 @@ export const setUserLocal = (token, user) => {
   localStorage.setItem("token", token);
   localStorage.setItem("user", JSON.stringify(user));
 };
+
+// return the language from the local storage
+export const getLanguage = () => {
+  return localStorage.getItem("lang") || "en";
+};
+
+// set the language from the local storage
+export const setLanguage = (lang) => {
+  localStorage.setItem("lang", lang);
+};

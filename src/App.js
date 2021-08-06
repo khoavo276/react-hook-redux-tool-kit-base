@@ -10,11 +10,19 @@ import SignUp from "./pages/User/SignUp/SignUp.js";
 import PrivateRoute from "./utils/PrivateRoute";
 import PublicRoute from "./utils/PublicRoute";
 import "./assets/scss/app.scss";
-import { getToken, removeUserLocal, setUserLocal } from "./utils/Common";
+import {
+  getToken,
+  removeUserLocal,
+  setUserLocal,
+  getLanguage,
+} from "./utils/Common";
 import api from "./api/api.js";
 import Toast from "./components/Toast";
+import { useTranslation } from "react-i18next";
+import "./plugins/react-i18n.js";
 
 function App() {
+  const { i18n } = useTranslation();
   const { user } = useSelector((state) => state.user);
   const [authLoading, setAuthLoading] = useState(true);
 
@@ -38,6 +46,7 @@ function App() {
   };
 
   useEffect(() => {
+    i18n.changeLanguage(getLanguage());
     const token = getToken();
     if (!token) {
       return;
