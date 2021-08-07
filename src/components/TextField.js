@@ -1,5 +1,6 @@
 import React from "react";
 import { ErrorMessage, useField } from "formik";
+import PropTypes from "prop-types";
 
 export const TextField = ({ label, ...props }) => {
   const [field, meta] = useField(props);
@@ -19,4 +20,8 @@ export const TextField = ({ label, ...props }) => {
       <ErrorMessage component="div" name={field.name} className="error" />
     </div>
   );
+};
+
+TextField.propTypes = {
+  label: PropTypes.string
 };

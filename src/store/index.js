@@ -4,11 +4,11 @@ import { combineReducers } from "redux";
 import user from "./user";
 
 const reducer = combineReducers({
-  user,
+  user
 });
 
 const store = configureStore({
-  reducer,
+  reducer
 });
 
 export default store;

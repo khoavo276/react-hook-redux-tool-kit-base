@@ -1,8 +1,10 @@
 import React from "react";
 import Loader from "react-loader-spinner";
+import PropTypes from "prop-types";
+
 import "./Loading.scss";
 
-const Loading = ({ visible }) => {
+const Loading = ({ visible = false }) => {
   return (
     <div className={!visible ? "d-none" : "loading-wrapper"}>
       <div className="loading-inner">
@@ -18,8 +20,8 @@ const Loading = ({ visible }) => {
   );
 };
 
-Loading.defaultProps = {
-  visible: false,
+Loading.propTypes = {
+  visible: PropTypes.bool
 };
 
 export default Loading;

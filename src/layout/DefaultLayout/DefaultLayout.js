@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import PropTypes from "prop-types";
 import "./DefaultLayout.scss";
 
 const DefaultLayout = (props) => {
@@ -13,6 +14,10 @@ const DefaultLayout = (props) => {
       <Footer />
     </>
   );
+};
+
+DefaultLayout.propTypes = {
+  children: PropTypes.element
 };
 
 export default DefaultLayout;

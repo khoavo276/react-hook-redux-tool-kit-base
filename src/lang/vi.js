@@ -13,12 +13,12 @@ export default {
         NEWS: "Tin Mới",
         LANGUAGE: "Ngôn Ngữ",
         PROFILE: "Thông tin cá nhân",
-        LIST_USER: "Danh sách",
+        LIST_USER: "Danh sách"
       },
       LANG: {
         EN: "Tiếng Anh",
-        VI: "Tiếng Việt",
-      },
-    },
-  },
+        VI: "Tiếng Việt"
+      }
+    }
+  }
 };

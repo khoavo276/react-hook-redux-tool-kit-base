@@ -18,7 +18,7 @@ const Login = () => {
       .required("Required"),
     password: Yup.string()
       .min(6, "Password must be at least 6 charaters")
-      .required("Password is required"),
+      .required("Password is required")
   });
 
   return (
@@ -36,14 +36,14 @@ const Login = () => {
           <Formik
             initialValues={{
               user: "",
-              password: "",
+              password: ""
             }}
             validationSchema={validate}
             onSubmit={(values) => {
               dispatch(login(values));
             }}
           >
-            {(formik) => (
+            {() => (
               <div>
                 <h1 className="my-4 font-weight-bold .display-4">Login</h1>
                 <Form className="mx-4">

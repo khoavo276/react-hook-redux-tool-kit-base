@@ -15,7 +15,7 @@ const SignUp = () => {
     email: Yup.string().email("Email is invalid").required("Email is required"),
     password: Yup.string()
       .min(6, "Password must be at least 6 charaters")
-      .required("Password is required"),
+      .required("Password is required")
   });
 
   return (
@@ -34,14 +34,14 @@ const SignUp = () => {
             initialValues={{
               email: "",
               user: "",
-              password: "",
+              password: ""
             }}
             validationSchema={validate}
             onSubmit={(values) => {
               console.log(values);
             }}
           >
-            {(formik) => (
+            {() => (
               <div>
                 <h1 className="my-4 font-weight-bold .display-4">SignUp</h1>
                 <Form className="mx-4">

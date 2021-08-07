@@ -10,7 +10,7 @@ const initialUser = localStorage.getItem("user")
 const slice = createSlice({
   name: "user",
   initialState: {
-    user: initialUser,
+    user: initialUser
   },
   reducers: {
     loginSuccess: (state, action) => {
@@ -23,8 +23,8 @@ const slice = createSlice({
       state.user = null;
       // localStorage.removeItem("user");
       removeUserLocal();
-    },
-  },
+    }
+  }
 });
 
 export default slice.reducer;
@@ -38,7 +38,7 @@ export const login = (values) => async (dispatch) => {
     // await api.post("/api/auth/login/", { username, password });
 
     let user = {
-      username: values?.user,
+      username: values?.user
     };
     let token = "faketoken";
 

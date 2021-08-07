@@ -14,9 +14,8 @@ import {
   getToken,
   removeUserLocal,
   setUserLocal,
-  getLanguage,
+  getLanguage
 } from "./utils/Common";
-import api from "./api/api.js";
 import Toast from "./components/Toast";
 import { useTranslation } from "react-i18next";
 import "./plugins/react-i18n.js";

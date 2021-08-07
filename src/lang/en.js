@@ -14,12 +14,12 @@ export default {
         NEWS: "News",
         LANGUAGE: "Language",
         PROFILE: "Profile",
-        LIST_USER: "List User",
+        LIST_USER: "List User"
       },
       LANG: {
         EN: "English",
-        VI: "Vietnamese",
-      },
-    },
-  },
+        VI: "Vietnamese"
+      }
+    }
+  }
 };
