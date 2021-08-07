@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
-import Login from "./pages/User/Login/Login.js";
-import ListUser from "./pages/ListUser/ListUser.js";
-import Error from "./pages/Error/Error.js";
 import { useSelector } from "react-redux";
 import Loading from "./components/Loading/Loading";
-import Home from "./pages/Home/Home";
-import SignUp from "./pages/User/SignUp/SignUp.js";
 import PrivateRoute from "./utils/PrivateRoute";
 import PublicRoute from "./utils/PublicRoute";
 import "./assets/scss/app.scss";
@@ -19,6 +14,14 @@ import {
 import Toast from "./components/Toast";
 import { useTranslation } from "react-i18next";
 import "./plugins/react-i18n.js";
+
+// Pages
+import Login from "./pages/User/Login/Login.js";
+import ListUser from "./pages/ListUser/ListUser.js";
+import SignUp from "./pages/User/SignUp/SignUp.js";
+import Home from "./pages/Home/Home";
+import Error from "./pages/Error/Error.js";
+import ProfileCreation from "./pages/ProfileCreation/ProfileCreation.js";
 
 function App() {
   const { i18n } = useTranslation();
@@ -67,6 +70,7 @@ function App() {
           <PublicRoute exact path="/signup" component={SignUp} />
           <Route exact path="/login" component={Login} />
           <Route path="/error" component={Error} />
+          <Route path="/profile" component={ProfileCreation} />
           <Redirect to="/error" />
         </Switch>
       </BrowserRouter>
