@@ -20,6 +20,9 @@ import Toast from "./components/Toast";
 import { useTranslation } from "react-i18next";
 import "./plugins/react-i18n.js";
 
+import Demo from "./pages/Demo/Demo";
+import "antd/dist/antd.css";
+
 function App() {
   const { i18n } = useTranslation();
   const { user } = useSelector((state) => state.user);
@@ -67,6 +70,7 @@ function App() {
           <PublicRoute exact path="/signup" component={SignUp} />
           <Route exact path="/login" component={Login} />
           <Route path="/error" component={Error} />
+          <Route path="/demo" component={Demo} />
           <Redirect to="/error" />
         </Switch>
       </BrowserRouter>
