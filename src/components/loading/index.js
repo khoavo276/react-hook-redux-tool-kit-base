@@ -2,7 +2,7 @@ import React from "react";
 import Loader from "react-loader-spinner";
 import PropTypes from "prop-types";
 
-import "./Loading.scss";
+import "./loading.scss";
 
 const Loading = ({ visible = false }) => {
   return (

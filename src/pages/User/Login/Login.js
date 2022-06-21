@@ -25,14 +25,6 @@ const Login = () => {
     <div className="wrapper-login">
       <div className="wrapper fadeInDown">
         <div id="formContent">
-          <div className="fadeIn mb-4">
-            <img
-              src="https://smartdev.com/wp-content/uploads/2020/06/SmartDev-Offshore-Software-Outsourcing.svg"
-              id="icon"
-              alt="User Icon"
-            />
-          </div>
-
           <Formik
             initialValues={{
               user: "",

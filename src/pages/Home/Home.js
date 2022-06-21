@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Card, Button } from "react-bootstrap";
 import placeHodel from "../../assets/images/item-holder.svg";
-import DefaultLayout from "../../layout/DefaultLayout/DefaultLayout";
+import DefaultLayout from "layouts/DefaultLayout";
 import "./Home.scss";
 
 const Home = () => {

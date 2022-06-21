@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import api from "../../api/api.js";
-import DefaultLayout from "../../layout/DefaultLayout/DefaultLayout";
-import Loading from "../../components/Loading/Loading";
+import api from "api/api.js";
+import DefaultLayout from "layouts/DefaultLayout";
+import Loading from "components/loading";
 import "./ListUser.scss";
 
 const ListUser = () => {
@@ -17,6 +17,7 @@ const ListUser = () => {
       setLoading(false);
     } catch (e) {
       console.log(e);
+    } finally {
       setLoading(false);
     }
   };

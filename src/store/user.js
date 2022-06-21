@@ -10,17 +10,20 @@ const initialUser = localStorage.getItem("user")
 const slice = createSlice({
   name: "user",
   initialState: {
-    user: initialUser
+    user: initialUser,
+    isLogin: false
   },
   reducers: {
     loginSuccess: (state, action) => {
       state.user = action.payload;
+      state.isLogin = true;
       // localStorage.setItem("user", JSON.stringify(action.payload));
       setUserLocal(action.payload?.token, action?.payload?.user);
       window.location.href = "/";
     },
     logoutSuccess: (state) => {
       state.user = null;
+      state.isLogin = false;
       // localStorage.removeItem("user");
       removeUserLocal();
     }

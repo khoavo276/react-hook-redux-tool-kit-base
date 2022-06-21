@@ -1,10 +1,10 @@
 import React from "react";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { logout } from "../../store/user";
+import { logout } from "store/user";
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { setLanguage } from "../../utils/Common";
+import { setLanguage } from "utils/Common";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -24,7 +24,7 @@ const Header = () => {
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
         <Container>
-          <Navbar.Brand href="/">SmartDev</Navbar.Brand>
+          <Navbar.Brand href="/">IshikawaRice</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
